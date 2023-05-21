@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import Konva from "konva";
 import Shape = Konva.Shape;
 import Group = Konva.Group;
@@ -6,8 +6,6 @@ import {MatMenuTrigger} from "@angular/material/menu";
 import {ShapeType} from "src/app/_models/shape-type";
 import {CarShape} from "src/app/graphics/shapes/car";
 import {ParkingShape} from "src/app/graphics/shapes/parking";
-import {Colors} from "src/app/_constants/colors";
-import {CalculationService} from "src/app/_services/calculation.service";
 
 @Component({
   selector: 'app-graphics',
@@ -25,7 +23,7 @@ export class GraphicsComponent implements AfterViewInit {
 
   ShapeType = ShapeType;
 
-  constructor(private calculationService: CalculationService) { }
+  constructor() { }
 
   ngAfterViewInit() {
     this.initState(() => {

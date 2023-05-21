@@ -5,7 +5,7 @@ export const tasks = [
       story: ``,
       subTasks: [
         {
-          text: `Az autó (Car) típusú objektumok kapjanak egy új szám típusú attribútumot,
+          text: `Az autó (Car) típusú objektumok kapjanak egy új, szám típusú attribútumot,
           ami a lerakás sorrendjét azonosítja.
 
 Az attribútum neve lehet például "index".
@@ -19,7 +19,7 @@ Az első lehelyezett kocsi esetén az értéke 1 lenne, a 2.-nál 2 és így tov
 
 Az 1. lehelyezett autó esetén a kapcsolat létrehozására nincs szükség (mivel még nincs mihez
 kapcsolódni), azonban a 2. autó lehelyezésekor automatikusan jöjjön létre kapcsolat az
-1. autóval.
+1. autóval, a 3. lehelyezett autó kapcsolódjon a 2.-hoz, stb.
           `,
           xp: 3
         },
@@ -32,7 +32,7 @@ kapcsolódni), azonban a 2. autó lehelyezésekor automatikusan jöjjön létre 
         {
           text: `Az autót mozgatva (drag) mozogjon az él (megfelelő végpontja) is.
 
-Tehát ha az autót mozgatjuk, akkor menjen vele az él is, utána is látszódjon a két autó közötti kapcsolat.`,
+Tehát ha az autót mozgatjuk, akkor módosuljon vele az él is, utána is látszódjon a két autó közötti kapcsolat.`,
           xp: 2
         },
         {
@@ -47,9 +47,9 @@ Fontos: Ez az opció csak autók esetén jelenjen meg, parkolók esetén ne!`,
 
 A menüpontra kattintás után a következő esetek fordulhatnak elő:
 - A felhasználó egy másik autóra kattint: A kapcsolat létrejön és megjelenik egy új él.
-Utána az alkalmazás kerüljön vissza az alapállapotba.
-- A felhasználó ugyanarra az autóra kattint: Kapcsolat nem jön létre, az alkalmazás kerüljön vissza az alapállapotba
+Utána az alkalmazás kerüljön vissza az alapállapotba
 (azaz, oda, hogy a klikkelés új objektum lehelyezését, vagy a menü megjelenését eredményezi).
+- A felhasználó ugyanarra az autóra kattint: Kapcsolat nem jön létre, az alkalmazás kerüljön vissza az alapállapotba.
 - A felhasználó egy parkoló objektumra kattint: Kapcsolat nem jön létre, az alkalmazás kerüljön vissza az alapállapotba.
 - A felhasználó a semmibe kattint: Kapcsolat nem jön létre, az alkalmazás kerüljön vissza az alapállapotba.
 `,
@@ -64,7 +64,7 @@ A menüpont kiválasztására törlődjön az él.
           xp: 2
         },
         {
-          text: `Az előző feladat élei  jelenjenek meg elhalványítva már a kattintás előtt.
+          text: `Az előző feladat élei jelenjenek meg elhalványítva már a kattintás előtt.
 
 Tehát a felhasználó az "Új összeköttetés" menüpontot választotta.
 Ezután még nem kattint, azonban egy másik kocsi felé mozgatja az egeret.
@@ -121,9 +121,11 @@ Ez lesz az animáció kiindulópontja.
 számú beszúrható.
 Ezek a blokkok annyiban térjenek el az elsőtől, hogy szabadon szerkeszthetőek, és alapból ne
 tartalmazzanak kitöltött értéket.
+- Az első kivételével ezek a blokkok törölhetőek is legyenek.
 - A koordináta blokkok alatt legyen egy number típusú mező is.
 Az itt megadott szám szabja meg, hogy az egyes koordinátákon hány másodpercet a kocsi, mielőtt
 továbbhaladna a következőre.
+Ez lehet egységes az összes pozícióra, ezért nem szükséges a koordináta-blokk részéve tenni.
 - Ez utóbbi mezőt csak akkor lehessen megadni, ha 1-nél több koordinátával rendelkezik az autó.
 (Ha csak 1 koordinátája van, akkor nem fog animálódni).
 `,
@@ -134,7 +136,9 @@ továbbhaladna a következőre.
           koordináták között.
 
 A mozgatás animációval történjen, tehát ne "ugráljanak", hanem "ússzanak" az autók egyik pozícióból
-a másikba, sorrendben.`,
+a másikba, sorrendben.
+
+Ez az animáció induljon is el amikor módosítjuk az objektumok pozícióit.`,
           xp: 3
         },
         {
@@ -147,7 +151,7 @@ az egér pozíciója alól.`,
           xp: 3
         },
         {
-          text: `Minden autó kapjon egy véletlenszerűen generált azonosító (id) létrehozáskor`,
+          text: `Minden autó kapjon egy véletlenszerűen generált azonosítót (id) létrehozáskor`,
           xp: 1
         },
         {
@@ -155,7 +159,7 @@ az egér pozíciója alól.`,
 
 Ezek legyenek a következők:
 - Az autó azonosítója (id)
-- Az autó pozíciói, pl.: "(1, 500), (150, 550), (500, 400)"
+- Az autó célpozíciói, pl.: "(1, 500), (150, 550), (500, 400)"
 - Az autó jelenlegi pozíciója. Fontos, hogy ez folyamatosan frissüljön, akkor is, amikor az autó éppen két
 koordináta között mozog!
 `,
@@ -192,13 +196,13 @@ Megállítás után a "Stop" gomb helyén egy "Start" gomb jelenjen meg. Erre ny
 
 A megjelenő űrlapon 2 mezőre van szükség:
 - Parkolóhelyek száma. Elfogadható értékek: 1, 2, 3, 4
-- Autók távolsága a parkolótól. Szám érték, pixelben megadva.`,
+- Autók távolsága a parkolótól. Szám, pixelben megadva.`,
           xp: 3
         },
         {
           text: `Az előző lépésben megadott beállítások grafikusan is jelenjenek meg az objektum környékén.
 
-Az egyik adat a parkoló felett jelenjen meg, a másik pedig alatta, szöveges formtáumban.
+Az egyik adat a parkoló felett jelenjen meg, a másik pedig alatta, szöveges formátumban.
           `,
           xp: 2
         },

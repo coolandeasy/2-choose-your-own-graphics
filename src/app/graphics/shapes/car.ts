@@ -29,15 +29,15 @@ export class CarShape {
     });
     const body = new Konva.Line({
       points: [
-        this.x,
-        this.y,
-        this.x + this.width,
+        this.x + this.width / 5,
         this.y,
         this.x + 4 * this.width / 5,
-        this.y + this.height,
-        this.x + this.width / 5,
+        this.y,
+        this.x + this.width,
         this.y + this.height,
         this.x,
+        this.y + this.height,
+        this.x + this.width / 5,
         this.y
       ],
       closed: true,
